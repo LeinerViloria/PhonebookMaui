@@ -1,7 +1,7 @@
 ﻿
 namespace Phonebook.Models
 {
-    public class Contact
+    public class ContactDTO
     {
         public string Id => $"{Guid.NewGuid()}";
         public string Name { get; set; }
