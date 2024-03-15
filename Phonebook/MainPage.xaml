@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:Phonebook.Models"
              xmlns:dxco="clr-namespace:DevExpress.Maui.CollectionView;assembly=DevExpress.Maui.CollectionView"
              x:Class="Phonebook.MainPage">
 
@@ -15,7 +16,21 @@
             
         </Border>
 
-        <dxco:DXCollectionView Grid.Row="1">
+        <dxco:DXCollectionView Grid.Row="1" ItemsSource="{Binding Contacts}" SelectionMode="None">
+            
+            <dxco:DXCollectionView.SortDescriptions>
+                <dxco:SortDescription FieldName="FirstName" SortOrder="Ascending" />
+            </dxco:DXCollectionView.SortDescriptions>
+
+            <dxco:DXCollectionView.GroupDescription>
+                <dxco:GroupDescription FieldName="FirstName" GroupInterval="Alphabetical" />
+            </dxco:DXCollectionView.GroupDescription>
+
+            <dxco:DXCollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:ContactDTO">
+                    <Label Text="{Binding FullName}" />
+                </DataTemplate>
+            </dxco:DXCollectionView.ItemTemplate>
             
         </dxco:DXCollectionView>
 
