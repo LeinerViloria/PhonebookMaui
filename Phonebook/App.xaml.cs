@@ -13,7 +13,7 @@ namespace Phonebook
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new MainPage();
         }
     }
 }
