@@ -1,4 +1,5 @@
-﻿using Phonebook.Models;
+﻿using DevExpress.Maui.Controls;
+using Phonebook.Models;
 using System.Collections.ObjectModel;
 
 namespace Phonebook
@@ -17,7 +18,7 @@ namespace Phonebook
 
         public void OnCreate(object sender, EventArgs e)
         {
-            //...
+            bottomSheet.State = BottomSheetState.HalfExpanded;
         }
     }
 
