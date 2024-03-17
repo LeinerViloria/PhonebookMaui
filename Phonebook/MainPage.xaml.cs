@@ -21,7 +21,7 @@ namespace Phonebook
             bottomSheet.State = BottomSheetState.HalfExpanded;
         }
 
-        public void CancelSave(object sender, EventArgs e)
+        public void OnCancel(object sender, EventArgs e)
         {
             bottomSheet.State = BottomSheetState.Hidden;
         }
