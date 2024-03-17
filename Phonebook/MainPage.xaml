@@ -62,7 +62,7 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
-                    <ImageButton Grid.Column="0" HeightRequest="40" Source="close.png" />
+                    <ImageButton Grid.Column="0" HeightRequest="40" Source="close.png" Clicked="CancelSave" />
 
                     <Label Grid.Column="1" Text="Nuevo contacto" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="18" />
 
