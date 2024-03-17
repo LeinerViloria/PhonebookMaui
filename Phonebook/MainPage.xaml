@@ -4,6 +4,7 @@
              xmlns:models="clr-namespace:Phonebook.Models"
              xmlns:dxco="clr-namespace:DevExpress.Maui.CollectionView;assembly=DevExpress.Maui.CollectionView"
              xmlns:dxc="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
              x:Class="Phonebook.MainPage">
 
     <Grid>
@@ -69,7 +70,13 @@
                     <ImageButton Grid.Column="2" HeightRequest="40" Source="check.png" />
                 </Grid>
 
-                <BoxView Margin="0,10,0,0" HeightRequest="1" Background="Gray" />
+                <BoxView Margin="0,20,0,20" HeightRequest="1" Background="Gray" />
+
+                <dxe:TextEdit x:Name="txtName" PlaceholderText="Nombre" />
+                <dxe:TextEdit x:Name="txtOccupation" PlaceholderText="Ocupación" />
+                <dxe:TextEdit x:Name="txtPhone" PlaceholderText="Número de teléfono" Keyboard="Telephone" />
+                <dxe:TextEdit x:Name="txtAddress" PlaceholderText="Dirección" />
+                <dxe:TextEdit x:Name="txtEmail" PlaceholderText="sample@gmail.com" Keyboard="Email" />
 
             </VerticalStackLayout>
             
