@@ -6,8 +6,8 @@ namespace Phonebook
     {
         public static List<ContactDTO> Contacts = new ()
         {
-            new(){ Name = "Aaron", LastName = "Mendonza" },
-            new(){ Name = "Luz", LastName = "García" }
+            new(){ Name = "Aaron" },
+            new(){ Name = "Luz" }
         };
         public App()
         {

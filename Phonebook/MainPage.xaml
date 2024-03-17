@@ -31,7 +31,7 @@
             <dxco:DXCollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:ContactDTO">
                     <HorizontalStackLayout Padding="30, 10, 30, 10">
-                        <Label Text="{Binding FullName}" />
+                        <Label Text="{Binding Name}" />
                     </HorizontalStackLayout>
                 </DataTemplate>
             </dxco:DXCollectionView.ItemTemplate>
@@ -67,7 +67,7 @@
 
                     <Label Grid.Column="1" Text="Nuevo contacto" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="18" />
 
-                    <ImageButton Grid.Column="2" HeightRequest="40" Source="check.png" />
+                    <ImageButton Grid.Column="2" HeightRequest="40" Source="check.png" Clicked="Save" />
                 </Grid>
 
                 <BoxView Margin="0,20,0,20" HeightRequest="1" Background="Gray" />
