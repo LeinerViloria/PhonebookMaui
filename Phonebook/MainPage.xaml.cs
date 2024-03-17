@@ -64,6 +64,8 @@ namespace Phonebook
 
             Contacts.Add(NewContact);
             bottomSheet.State = BottomSheetState.Hidden;
+
+            _ = Utils.Utils.ShowToast("Contacto guardado");
         }
     }
 

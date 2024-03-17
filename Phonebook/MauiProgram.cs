@@ -1,4 +1,5 @@
-﻿using DevExpress.Maui;
+﻿using CommunityToolkit.Maui;
+using DevExpress.Maui;
 using Microsoft.Extensions.Logging;
 
 namespace Phonebook
@@ -11,6 +12,7 @@ namespace Phonebook
             builder
                 .UseMauiApp<App>()
                 .UseDevExpress()
+                .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
