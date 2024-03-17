@@ -72,11 +72,11 @@
 
                 <BoxView Margin="0,20,0,20" HeightRequest="1" Background="Gray" />
 
-                <dxe:TextEdit x:Name="txtName" PlaceholderText="Nombre" />
-                <dxe:TextEdit x:Name="txtOccupation" PlaceholderText="Ocupación" />
-                <dxe:TextEdit x:Name="txtPhone" PlaceholderText="Número de teléfono" Keyboard="Telephone" />
-                <dxe:TextEdit x:Name="txtAddress" PlaceholderText="Dirección" />
-                <dxe:TextEdit x:Name="txtEmail" PlaceholderText="sample@gmail.com" Keyboard="Email" />
+                <dxe:TextEdit x:Name="txtName" StartIcon="person.png" IconIndent="10" PlaceholderText="Escribe su nombre" LabelText="Nombre" />
+                <dxe:TextEdit x:Name="txtOccupation" StartIcon="business_bag.png" IconIndent="10" PlaceholderText="Escribe su ocupación" LabelText="Ocupación" />
+                <dxe:TextEdit x:Name="txtPhone" StartIcon="telephone.png" IconIndent="10" PlaceholderText="Escribe su teléfono" LabelText="Número de teléfono" Keyboard="Telephone" />
+                <dxe:TextEdit x:Name="txtAddress" StartIcon="build.png" IconIndent="10" PlaceholderText="Escribe su Dirección" LabelText="Dirección" />
+                <dxe:TextEdit x:Name="txtEmail" StartIcon="email.png" IconIndent="10" PlaceholderText="sample@gmail.com" LabelText="Correo eléctronico" Keyboard="Email" />
 
             </VerticalStackLayout>
             
