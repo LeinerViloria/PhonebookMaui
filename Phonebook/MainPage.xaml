@@ -10,14 +10,13 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition />
-            <RowDefinition />
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <Label Text="Phonebook" FontSize="28" TextColor="White" Background="{StaticResource Primary}" Padding="10" HorizontalTextAlignment="Center" />
+        <Label Grid.Row="0" Text="Phonebook" FontSize="28" TextColor="White" Background="{StaticResource Primary}" Padding="10" HorizontalTextAlignment="Center" />
 
         <VerticalStackLayout Grid.Row="1" >
             <Label Text="Contactos" Padding="4" FontSize="Medium" FontAttributes="Bold" />
@@ -27,25 +26,22 @@
 
         <dxco:DXCollectionView Grid.Row="2" ItemsSource="{Binding Contacts}" SelectionMode="Single">
 
-            <dxco:DXCollectionView.SortDescriptions>
-                <dxco:SortDescription FieldName="FirstName" SortOrder="Ascending" />
-            </dxco:DXCollectionView.SortDescriptions>
-
-            <dxco:DXCollectionView.GroupDescription>
-                <dxco:GroupDescription FieldName="FirstName" GroupInterval="Alphabetical" />
-            </dxco:DXCollectionView.GroupDescription>
-
             <dxco:DXCollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:ContactDTO">
-                    <Label Text="{Binding FullName}" />
+                    <HorizontalStackLayout Padding="30, 10, 30, 10">
+                        <Label Text="{Binding FullName}" />
+                    </HorizontalStackLayout>
                 </DataTemplate>
             </dxco:DXCollectionView.ItemTemplate>
 
         </dxco:DXCollectionView>
 
-        <Button Grid.Row="3" Text="Hola">
-
-        </Button>
+        <AbsoluteLayout Grid.Row="2">
+            <Button Text="Nuevo Contacto"
+                Background="{StaticResource Primary}"
+                AbsoluteLayout.LayoutBounds="0.98, 0.95"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        </AbsoluteLayout>
     </Grid>
 
 </ContentPage>
