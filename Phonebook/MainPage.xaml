@@ -38,9 +38,10 @@
 
         <AbsoluteLayout Grid.Row="2">
             <Button ImageSource="add.png"
-                Background="{StaticResource Primary}"
-                AbsoluteLayout.LayoutBounds="0.98, 0.95, 60, 60"
-                AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                    Clicked="OnCreate"
+                    Background="{StaticResource Primary}"
+                    AbsoluteLayout.LayoutBounds="0.98, 0.95, 60, 60"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"/>
         </AbsoluteLayout>
     </Grid>
 

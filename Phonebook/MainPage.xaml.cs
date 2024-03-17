@@ -14,6 +14,11 @@ namespace Phonebook
 
             BindingContext = this;
         }
+
+        public void OnCreate(object sender, EventArgs e)
+        {
+            //...
+        }
     }
 
 }
