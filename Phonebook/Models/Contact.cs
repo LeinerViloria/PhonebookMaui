@@ -5,7 +5,7 @@ namespace Phonebook.Models
     {
         public string Id => $"{Guid.NewGuid()}";
         public string Name { get; set; } = null!;
-        public string Image { get; set; } = null!;
+        public string Image { get; set; } = "contact_default.png";
         public string? Email { get; set; }
         public string? Occupation { get; set; }
         public string? Address { get; set; }

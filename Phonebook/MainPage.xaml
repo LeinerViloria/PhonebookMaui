@@ -36,14 +36,21 @@
             SelectionMode="Single"
             DetailFormTemplate="{DataTemplate templates:ContactDetail}"
             Tap="SelectionChanged"
-            ItemSize="50">
+            ItemSize="50"
+            ItemSpacing="20">
 
             <dxco:DXCollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:ContactDTO">
 
                     <HorizontalStackLayout>
 
-                        <Label Text="{Binding Name}" />
+                        <Image Source="{Binding Image}" WidthRequest="60" Margin="0,0,10,0">
+                            <Image.Clip>
+                                <EllipseGeometry RadiusX="50" RadiusY="50" Center="50, 50" />
+                            </Image.Clip>
+                        </Image>
+
+                        <Label Text="{Binding Name}" VerticalTextAlignment="Center" />
 
                     </HorizontalStackLayout>
 
