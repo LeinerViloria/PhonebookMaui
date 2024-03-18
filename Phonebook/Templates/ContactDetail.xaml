@@ -31,7 +31,6 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition />
-                    <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
                 <VerticalStackLayout Grid.Column="0">
@@ -40,10 +39,6 @@
                 </VerticalStackLayout>
 
                 <VerticalStackLayout Grid.Column="1">
-
-                </VerticalStackLayout>
-
-                <VerticalStackLayout Grid.Column="2">
 
                 </VerticalStackLayout>
             </Grid>
