@@ -1,6 +1,7 @@
 using DevExpress.Maui.Controls;
 using DevExpress.Maui.Core;
 using Phonebook.Models;
+using System.Reflection.Metadata;
 
 namespace Phonebook.Templates;
 
@@ -19,5 +20,10 @@ public partial class ContactDetail : ContentPage
     public void OnEditPhoto(object sender, EventArgs e)
 	{
         bottomSheet.State = BottomSheetState.HalfExpanded;
+    }
+
+    public void Call(object sender, EventArgs e)
+	{
+
     }
 }

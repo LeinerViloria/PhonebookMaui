@@ -34,12 +34,13 @@
                 </Grid.ColumnDefinitions>
 
                 <VerticalStackLayout Grid.Column="0">
-                    <ImageButton Source="call.png" HorizontalOptions="Center" HeightRequest="80" WidthRequest="80" />
+                    <ImageButton Source="call.png" HorizontalOptions="Center" HeightRequest="80" WidthRequest="80" Clicked="Call" />
                     <Label Text="Llamar" HorizontalTextAlignment="Center" FontSize="Medium" />
                 </VerticalStackLayout>
 
                 <VerticalStackLayout Grid.Column="1">
-
+                    <ImageButton Source="call.png" HorizontalOptions="Center" HeightRequest="80" WidthRequest="80" Clicked="Call" />
+                    <Label Text="Mensaje" HorizontalTextAlignment="Center" FontSize="Medium" />
                 </VerticalStackLayout>
             </Grid>
 
