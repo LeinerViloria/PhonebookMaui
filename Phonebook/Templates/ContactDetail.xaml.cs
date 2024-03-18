@@ -1,3 +1,4 @@
+using DevExpress.Maui.Controls;
 using DevExpress.Maui.Core;
 using Phonebook.Models;
 
@@ -14,4 +15,9 @@ public partial class ContactDetail : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    public void OnEditPhoto(object sender, EventArgs e)
+	{
+        bottomSheet.State = BottomSheetState.HalfExpanded;
+    }
 }

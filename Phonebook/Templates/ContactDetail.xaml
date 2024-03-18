@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxc="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
              x:Class="Phonebook.Templates.ContactDetail">
 
     <ContentPage.ToolbarItems>
@@ -10,11 +11,11 @@
 
     <ScrollView>
         <VerticalStackLayout Padding="0,10,0,0">
-            <Image Source="{Binding Item.Image}" WidthRequest="100" HeightRequest="100" Margin="0,0,0,10">
-                <Image.Clip>
+            <ImageButton Source="{Binding Item.Image}" WidthRequest="100" HeightRequest="100" Margin="0,0,0,10" Clicked="OnEditPhoto">
+                <ImageButton.Clip>
                     <EllipseGeometry RadiusX="50" RadiusY="50" Center="50, 50" />
-                </Image.Clip>
-            </Image>
+                </ImageButton.Clip>
+            </ImageButton>
 
             <Label Text="{Binding Item.Name}" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center" />
 
@@ -22,6 +23,18 @@
 
             <BoxView HeightRequest="1" Background="Gray" HorizontalOptions="Center" />
 
+
+            <dxc:BottomSheet x:Name="bottomSheet" 
+                 Grid.Row="1" 
+                 BackgroundColor="White"
+                 HalfExpandedRatio="0.2"
+                 CornerRadius="30">
+                <VerticalStackLayout>
+                    <Button Text="Tomar foto" Margin="10" />
+                    <Button Text="Subir foto" Margin="10" />
+                </VerticalStackLayout>
+            </dxc:BottomSheet>
+            
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
