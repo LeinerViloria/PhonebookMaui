@@ -2,6 +2,8 @@
 using DevExpress.Maui.Editors;
 using Phonebook.Models;
 using System.Collections.ObjectModel;
+using DevExpress.Maui.CollectionView;
+using Phonebook.Templates;
 
 namespace Phonebook
 {
@@ -66,6 +68,11 @@ namespace Phonebook
             bottomSheet.State = BottomSheetState.Hidden;
 
             _ = Utils.Utils.ShowToast("Contacto guardado");
+        }
+
+        public void SelectionChanged(object sender, CollectionViewGestureEventArgs e)
+        {
+            collectionView.ShowDetailForm(e.ItemHandle, true);
         }
     }
 

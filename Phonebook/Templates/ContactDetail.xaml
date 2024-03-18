@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Phonebook.Templates.ContactDetail">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Editar" Order="Secondary" />
+        <ToolbarItem Text="Eliminar" Order="Secondary" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="0,10,0,0">
+            <Image Source="{Binding Item.Image}" WidthRequest="100" HeightRequest="100" Margin="0,0,0,10">
+                <Image.Clip>
+                    <EllipseGeometry RadiusX="50" RadiusY="50" Center="50, 50" />
+                </Image.Clip>
+            </Image>
+
+            <Label Text="{Binding Item.Name}" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+
+            <Label Text="{Binding Item.Occupation}" FontSize="16" HorizontalTextAlignment="Center" />
+
+            <BoxView HeightRequest="1" Background="Gray" HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

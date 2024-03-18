@@ -2,14 +2,18 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:Phonebook.Models"
+             xmlns:templates="clr-namespace:Phonebook.Templates"
              xmlns:dxco="clr-namespace:DevExpress.Maui.CollectionView;assembly=DevExpress.Maui.CollectionView"
              xmlns:dxc="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
              xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
              x:Class="Phonebook.MainPage">
 
+    <NavigationPage.TitleView>
+        <Label Text="Phonebook" TextColor="White" FontSize="25" HorizontalOptions="Center" VerticalTextAlignment="Center" />
+    </NavigationPage.TitleView>
+
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition />
         </Grid.RowDefinitions>
@@ -18,21 +22,31 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Row="0" Text="Phonebook" FontSize="28" TextColor="White" Background="{StaticResource Primary}" Padding="10" HorizontalTextAlignment="Center" />
-
-        <VerticalStackLayout Grid.Row="1" >
+        <VerticalStackLayout Grid.Row="0" >
             <Label Text="Contactos" Padding="4" FontSize="Medium" FontAttributes="Bold" />
 
             <BoxView HeightRequest="1" Color="Black" />
         </VerticalStackLayout>
 
-        <dxco:DXCollectionView Grid.Row="2" ItemsSource="{Binding Contacts}" SelectionMode="Single" >
+        <dxco:DXCollectionView 
+            x:Name="collectionView"
+            Margin="10,20,10,0"
+            Grid.Row="1" 
+            ItemsSource="{Binding Contacts}" 
+            SelectionMode="Single"
+            DetailFormTemplate="{DataTemplate templates:ContactDetail}"
+            Tap="SelectionChanged"
+            ItemSize="50">
 
             <dxco:DXCollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:ContactDTO">
-                    <HorizontalStackLayout Padding="30, 10, 30, 10">
+
+                    <HorizontalStackLayout>
+
                         <Label Text="{Binding Name}" />
+
                     </HorizontalStackLayout>
+
                 </DataTemplate>
             </dxco:DXCollectionView.ItemTemplate>
 
@@ -47,7 +61,7 @@
         </AbsoluteLayout>
 
         <dxc:BottomSheet x:Name="bottomSheet" 
-                         Grid.Row="2" 
+                         Grid.Row="1" 
                          BackgroundColor="White"
                          HalfExpandedRatio="0.6"
                          CornerRadius="30"
