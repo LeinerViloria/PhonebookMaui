@@ -21,8 +21,32 @@
 
             <Label Text="{Binding Item.Occupation}" FontSize="16" HorizontalTextAlignment="Center" />
 
-            <BoxView HeightRequest="1" Background="Gray" HorizontalOptions="Center" />
+            <BoxView HeightRequest="1" Background="Gray" WidthRequest="300" Margin="0,20,0,20" />
 
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <VerticalStackLayout Grid.Column="0">
+                    <ImageButton Source="call.png" HorizontalOptions="Center" HeightRequest="80" WidthRequest="80" />
+                    <Label Text="Llamar" HorizontalTextAlignment="Center" FontSize="Medium" />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Column="1">
+
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Column="2">
+
+                </VerticalStackLayout>
+            </Grid>
 
             <dxc:BottomSheet x:Name="bottomSheet" 
                  Grid.Row="1" 
