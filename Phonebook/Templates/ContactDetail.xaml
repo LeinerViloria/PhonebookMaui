@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:dxc="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
              xmlns:dxco="clr-namespace:DevExpress.Maui.CollectionView;assembly=DevExpress.Maui.CollectionView"
+             xmlns:dx="clr-namespace:DevExpress.Maui.Core;assembly=DevExpress.Maui.Core"
              xmlns:models="clr-namespace:Phonebook.Models"
              x:Class="Phonebook.Templates.ContactDetail">
 
@@ -29,7 +30,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
-                
+
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition />
@@ -46,6 +47,29 @@
                 </VerticalStackLayout>
             </Grid>
 
+            <StackLayout Margin="0,100,0,0">
+                <dx:DXButton Margin="10" BackgroundColor= "#EEF2F3">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="telephone.png" HeightRequest="24" WidthRequest="24" Margin="5,0,300,0"/>
+                        <Label Text="{Binding Item.PhoneNumber}" />
+                    </StackLayout>
+                </dx:DXButton>
+
+                <dx:DXButton Margin="10" BackgroundColor= "#EEF2F3">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="direccion.png" HeightRequest="24" WidthRequest="24" Margin="5,0,300,0"/>
+                        <Label Text="{Binding Item.Address}" />
+                    </StackLayout>
+                </dx:DXButton>
+
+                <dx:DXButton Margin="10" BackgroundColor= "#EEF2F3">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="email.png" HeightRequest="24" WidthRequest="24" Margin="5,0,300,0"/>
+                        <Label Text="{Binding Item.Email}" />
+                        
+                    </StackLayout>
+                </dx:DXButton>
+            </StackLayout>
             <dxc:BottomSheet x:Name="bottomSheet" 
                  Grid.Row="1" 
                  BackgroundColor="White"
@@ -54,8 +78,10 @@
                 <VerticalStackLayout>
                     <Button Text="Tomar foto" Margin="10" />
                     <Button Text="Subir foto" Margin="10" />
-                </VerticalStackLayout>
-            </dxc:BottomSheet>
+
+               
+            </VerticalStackLayout>
+        </dxc:BottomSheet>
             
         </VerticalStackLayout>
     </ScrollView>

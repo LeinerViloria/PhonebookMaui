@@ -3,10 +3,8 @@ using DevExpress.Maui.Editors;
 using Phonebook.Models;
 using System.Collections.ObjectModel;
 using DevExpress.Maui.CollectionView;
-using Phonebook.Templates;
-using Contacts;
-using System.Net;
-using System.Xml.Linq;
+
+
 
 namespace Phonebook
 {
