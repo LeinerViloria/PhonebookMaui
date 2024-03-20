@@ -30,7 +30,6 @@ public partial class ContactDetail : ContentPage
 	{
 
     }
+    
 
-	
-   
 }

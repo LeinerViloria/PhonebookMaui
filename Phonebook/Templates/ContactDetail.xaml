@@ -69,6 +69,8 @@
                         
                     </StackLayout>
                 </dx:DXButton>
+
+            
             </StackLayout>
             <dxc:BottomSheet x:Name="bottomSheet" 
                  Grid.Row="1" 
