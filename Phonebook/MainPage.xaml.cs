@@ -4,6 +4,9 @@ using Phonebook.Models;
 using System.Collections.ObjectModel;
 using DevExpress.Maui.CollectionView;
 using Phonebook.Templates;
+using Contacts;
+using System.Net;
+using System.Xml.Linq;
 
 namespace Phonebook
 {
@@ -33,7 +36,7 @@ namespace Phonebook
         {
             textEdit.HasError = false;
 
-            if(!string.IsNullOrWhiteSpace(textEdit.Text))
+            if (!string.IsNullOrWhiteSpace(textEdit.Text))
                 return;
 
             textEdit.ErrorText = $"{textEdit.LabelText} es requerido";
@@ -67,6 +70,12 @@ namespace Phonebook
             Contacts.Add(NewContact);
             bottomSheet.State = BottomSheetState.Hidden;
 
+            txtName.Text = string.Empty;
+            txtAddress.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            txtOccupation.Text = string.Empty;
+            txtPhone.Text = string.Empty;
+
             _ = Utils.Utils.ShowToast("Contacto guardado");
         }
 
@@ -77,3 +86,7 @@ namespace Phonebook
     }
 
 }
+
+
+
+
