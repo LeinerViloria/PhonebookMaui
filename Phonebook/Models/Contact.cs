@@ -6,7 +6,7 @@ namespace Phonebook.Models
     {
         public string Id => $"{Guid.NewGuid()}";
         public string Name { get; set; } = null!;
-        public dynamic Image => StreamImageSource is null ? DefaultImage : ImageSource;
+        public dynamic Image => ImageSource is null ? DefaultImage : ImageSource;
         public string? Email { get; set; }
         public string? Occupation { get; set; }
         public string? Address { get; set; }
