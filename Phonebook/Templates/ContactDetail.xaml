@@ -78,8 +78,8 @@
                  HalfExpandedRatio="0.2"
                  CornerRadius="30">
                 <VerticalStackLayout>
-                    <Button Text="Tomar foto" Margin="10" />
-                    <Button Text="Subir foto" Margin="10" />
+                    <Button Text="Tomar foto" Margin="10" Clicked="TakePicture" />
+                    <Button Text="Subir foto" Margin="10" Clicked="UploadPhoto" />
                 </VerticalStackLayout>
             </dxc:BottomSheet>
 
