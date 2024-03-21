@@ -15,7 +15,7 @@
 
     <ScrollView>
         <VerticalStackLayout Padding="0,10,0,0">
-            <ImageButton Source="{Binding Item.Image}" WidthRequest="100" HeightRequest="100" Margin="0,0,0,10" Clicked="OnEditPhoto">
+            <ImageButton x:Name="profilePhoto" Source="{Binding Item.Image}" WidthRequest="100" HeightRequest="100" Margin="0,0,0,10" Clicked="OnEditPhoto">
                 <ImageButton.Clip>
                     <EllipseGeometry RadiusX="50" RadiusY="50" Center="50, 50" />
                 </ImageButton.Clip>

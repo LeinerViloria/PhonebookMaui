@@ -74,7 +74,10 @@ public partial class ContactDetail : ContentPage
             return;
         
         var memoriaStream = await photo.OpenReadAsync();
-        ((ContactDTO) ViewModel.Item).Image = ImageSource.FromStream(() => memoriaStream);
+
+        var Image = ImageSource.FromStream(() => memoriaStream);
+        profilePhoto.Source = Image;
+        //((ContactDTO) ViewModel.Item).Image = Image;
 
         UpdateContactPhoto();
 
@@ -83,13 +86,21 @@ public partial class ContactDetail : ContentPage
 
     public void UploadPhoto(object sender, EventArgs e)
     {
+        _ = UploadPhotoAsync();
+    }
+
+    private async Task UploadPhotoAsync()
+    {
         var photo = await MediaPicker.PickPhotoAsync();
 
         if(photo is null)
             return;
 
         var memoriaStream = await foto.OpenReadAsync();
-        ((ContactDTO) ViewModel.Item).Image = ImageSource.FromStream(() => memoriaStream);
+
+        var Image = ImageSource.FromStream(() => memoriaStream);
+        profilePhoto.Source = Image;
+        //((ContactDTO) ViewModel.Item).Image = Image;
 
         UpdateContactPhoto();
 
