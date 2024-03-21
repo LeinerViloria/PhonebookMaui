@@ -24,20 +24,35 @@ public partial class ContactDetail : ContentPage
 
     public void Call(object sender, EventArgs e)
 	{
+        if(string.IsNullOrEmpty(Contact.PhoneNumber))
+        {
+            _ = Phonebook.Utils.Utils.ShowToast("El contacto no tiene un telefono al cual llamar");
+            return;
+        }
+        _ = Phonebook.Utils.Utils.Call(Contact.PhoneNumber);
+    }
 
+    public void SendMessage(object sender, EventArgs e)
+	{
+        if(string.IsNullOrEmpty(Contact.PhoneNumber))
+        {
+            _ = Phonebook.Utils.Utils.ShowToast("El contacto no tiene un telefono al cual enviar un mensaje");
+            return;
+        }
+        _ = Phonebook.Utils.Utils.SendMessage(Contact.PhoneNumber);
     }
 
     public void Edit(object sender, EventArgs e)
 	{
-	editBottomSheet.State = BottomSheetState.HalfExpanded;
+	    editBottomSheet.State = BottomSheetState.HalfExpanded;
     }
 
     public void Delete(object sender, EventArgs e)
 	{
-	var Result = App.Contacts.First(x => x.Id == Contact.Id);
- 	App.Contacts.Remove(Result);
+        var Result = App.Contacts.First(x => x.Id == Contact.Id);
+        App.Contacts.Remove(Result);
 
-  	_ = Navigation.PopAsync();
+        _ = Navigation.PopAsync();
     }
     
 

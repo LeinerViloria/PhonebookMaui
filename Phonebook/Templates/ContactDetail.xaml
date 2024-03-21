@@ -4,6 +4,7 @@
              xmlns:dxc="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
              xmlns:dxco="clr-namespace:DevExpress.Maui.CollectionView;assembly=DevExpress.Maui.CollectionView"
              xmlns:dx="clr-namespace:DevExpress.Maui.Core;assembly=DevExpress.Maui.Core"
+             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
              xmlns:models="clr-namespace:Phonebook.Models"
              x:Class="Phonebook.Templates.ContactDetail">
 
@@ -42,7 +43,7 @@
                 </VerticalStackLayout>
 
                 <VerticalStackLayout Grid.Column="1">
-                    <ImageButton Source="message.png" HorizontalOptions="Center" HeightRequest="80" WidthRequest="80" Clicked="Call" />
+                    <ImageButton Source="message.png" HorizontalOptions="Center" HeightRequest="80" WidthRequest="80" Clicked="SendMessage" />
                     <Label Text="Mensaje" HorizontalTextAlignment="Center" FontSize="Medium" />
                 </VerticalStackLayout>
             </Grid>
@@ -63,11 +64,10 @@
                 </dx:DXButton>
 
                 <dx:DXButton Margin="10" BackgroundColor= "#EEF2F3">
-                    <StackLayout Orientation="Horizontal">
+                    <HorizontalStackLayout>
                         <Image Source="email.png" HeightRequest="24" WidthRequest="24" Margin="5,0,300,0"/>
                         <Label Text="{Binding Item.Email}" />
-                        
-                    </StackLayout>
+                    </HorizontalStackLayout>
                 </dx:DXButton>
 
             
@@ -89,7 +89,25 @@
                  HalfExpandedRatio="0.2"
                  CornerRadius="30">
                 <VerticalStackLayout>
-                    <Label Text="Edicion" />
+                    <dxe:TextEdit x:Name="txtName" StartIcon="person.png" IconIndent="10" PlaceholderText="Escribe su nombre" LabelText="Nombre" />
+                    <dxe:TextEdit x:Name="txtOccupation" StartIcon="business_bag.png" IconIndent="10" PlaceholderText="Escribe su ocupación" LabelText="Ocupación" />
+                    <dxe:TextEdit x:Name="txtPhone" StartIcon="telephone.png" IconIndent="10" PlaceholderText="Escribe su teléfono" LabelText="Número de teléfono" Keyboard="Telephone" />
+                    <dxe:TextEdit x:Name="txtAddress" StartIcon="build.png" IconIndent="10" PlaceholderText="Escribe su Dirección" LabelText="Dirección" />
+                    <dxe:TextEdit x:Name="txtEmail" StartIcon="email.png" IconIndent="10" PlaceholderText="sample@gmail.com" LabelText="Correo eléctronico" Keyboard="Email" />
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnsDefinitions>
+                            <ColumnDefinitions />
+                            <ColumnDefinitions />
+                        </Grid.ColumnsDefinitions>
+
+                        <Button Grid.Row="0" Background="transparent" Grid.Column="0" />
+                        <Button Grid.Row="0" Background="transparent" Grid.Column="1" />
+                    </Grid>
                 </VerticalStackLayout>
             </dxc:BottomSheet>
             
