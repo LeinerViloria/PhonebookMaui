@@ -100,10 +100,10 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
 
-                        <Grid.ColumnsDefinitions>
-                            <ColumnDefinitions />
-                            <ColumnDefinitions />
-                        </Grid.ColumnsDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
 
                         <Button Grid.Row="0" Background="transparent" Text="Cancelar" Grid.Column="0" />
                         <Button Grid.Row="0" Background="transparent" Text="Actualizar" Grid.Column="1" />
