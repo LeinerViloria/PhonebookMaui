@@ -58,7 +58,7 @@ public partial class ContactDetail : ContentPage
 
     private void UpdateContactPhoto()
     {
-        App.Contacts.First(x => x.Id == Contact.Id).ImageSource = ((ContactDTO) ViewModel.Item).Image;
+        //App.Contacts.First(x => x.Id == Contact.Id).ImageSource = ((ContactDTO) ViewModel.Item).Image;
     }
 
     public void TakePicture(object sender, EventArgs e)
@@ -77,11 +77,16 @@ public partial class ContactDetail : ContentPage
 
         var Image = ImageSource.FromStream(() => memoriaStream);
         profilePhoto.Source = Image;
-        ((ContactDTO) ViewModel.Item).ImageSource = Image;
+        //((ContactDTO) ViewModel.Item).ImageSource = Image;
 
         UpdateContactPhoto();
 
         bottomSheet.State = BottomSheetState.Hidden;
+    }
+
+    public void CloseUpdate(object sender, EventArgs e)
+    {
+        editBottomSheet.State = BottomSheetState.Hidden;
     }
 
     public void UploadPhoto(object sender, EventArgs e)
@@ -100,7 +105,7 @@ public partial class ContactDetail : ContentPage
 
         var Image = ImageSource.FromStream(() => memoriaStream);
         profilePhoto.Source = Image;
-        ((ContactDTO) ViewModel.Item).ImageSource = Image;
+        //((ContactDTO) ViewModel.Item).ImageSource = Image;
 
         UpdateContactPhoto();
 
@@ -126,7 +131,7 @@ public partial class ContactDetail : ContentPage
         return values.ToList().TrueForAll(x => !x.HasError);
     }
 
-    public void OnEdit()
+    public void OnEdit(object sender, EventArgs e)
     {
         var Continue = ValidateRequired(txtName, txtOccupation, txtPhone, txtAddress, txtEmail);
 

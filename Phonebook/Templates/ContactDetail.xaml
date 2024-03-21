@@ -64,10 +64,19 @@
                 </dx:DXButton>
 
                 <dx:DXButton Margin="10" BackgroundColor= "#EEF2F3">
-                    <HorizontalStackLayout>
-                        <Image Source="email.png" HeightRequest="24" WidthRequest="24" Margin="5,0,300,0"/>
-                        <Label Text="{Binding Item.Email}" />
-                    </HorizontalStackLayout>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Row="0" Grid.Column="0" Source="email.png" HeightRequest="24" WidthRequest="24" Margin="5,0,300,0"/>
+                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding Item.Email}" />
+                    </Grid>
                 </dx:DXButton>
 
             
@@ -105,8 +114,8 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
-                        <Button Grid.Row="0" Background="transparent" Text="Cancelar" Grid.Column="0" />
-                        <Button Grid.Row="0" Background="transparent" Text="Actualizar" Grid.Column="1" />
+                        <Button Grid.Row="0" Background="transparent" Text="Cancelar" Grid.Column="0" Clicked="CloseUpdate" />
+                        <Button Grid.Row="0" Background="transparent" Text="Actualizar" Grid.Column="1" Clicked="OnEdit" />
                     </Grid>
                 </VerticalStackLayout>
             </dxc:BottomSheet>
