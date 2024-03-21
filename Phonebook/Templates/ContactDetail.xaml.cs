@@ -3,6 +3,7 @@ using DevExpress.Maui.Core;
 using Phonebook.Models;
 using System.Collections.ObjectModel;
 using System.Reflection.Metadata;
+using DevExpress.Maui.Editors;
 
 namespace Phonebook.Templates;
 
@@ -29,7 +30,7 @@ public partial class ContactDetail : ContentPage
             _ = Phonebook.Utils.Utils.ShowToast("El contacto no tiene un telefono al cual llamar");
             return;
         }
-        _ = Phonebook.Utils.Utils.Call(Contact.PhoneNumber);
+        Phonebook.Utils.Utils.Call(Contact.PhoneNumber);
     }
 
     public void SendMessage(object sender, EventArgs e)
@@ -57,10 +58,15 @@ public partial class ContactDetail : ContentPage
 
     private void UpdateContactPhoto()
     {
-        App.Contacts.First(x => x.Id == Contact.Id).Image = ViewModel.Item.Image;
+        App.Contacts.First(x => x.Id == Contact.Id).Image = ((ContactDTO) ViewModel.Item).Image;
     }
 
     public void TakePicture(object sender, EventArgs e)
+    {
+        _ = TaskPictureAsync();
+    }
+
+    public async Task TaskPictureAsync()
     {
         var photo = await MediaPicker.CapturePhotoAsync();
 
@@ -68,7 +74,7 @@ public partial class ContactDetail : ContentPage
             return;
         
         var memoriaStream = await photo.OpenReadAsync();
-        ViewModel.Item.Image = ImageSource.FromStream(() => memoriaStream);
+        ((ContactDTO) ViewModel.Item).Image = ImageSource.FromStream(() => memoriaStream);
 
         UpdateContactPhoto();
 
@@ -83,7 +89,7 @@ public partial class ContactDetail : ContentPage
             return;
 
         var memoriaStream = await foto.OpenReadAsync();
-        ViewModel.Item.Image = ImageSource.FromStream(() => memoriaStream);
+        ((ContactDTO) ViewModel.Item).Image = ImageSource.FromStream(() => memoriaStream);
 
         UpdateContactPhoto();
 
@@ -116,11 +122,11 @@ public partial class ContactDetail : ContentPage
         if (!Continue)
                 return;
 
-        ViewModel.Item.Name = txtName.Text;
-        ViewModel.Item.Occupation = txtOccupation.Text;
-        ViewModel.Item.PhoneNumber = txtPhone.Text;
-        ViewModel.Item.Address = txtAddress.Text;
-        ViewModel.Item.Email = txtEmail.Text;
+        ((ContactDTO) ViewModel.Item).Name = txtName.Text;
+        ((ContactDTO) ViewModel.Item).Occupation = txtOccupation.Text;
+        ((ContactDTO) ViewModel.Item).PhoneNumber = txtPhone.Text;
+        ((ContactDTO) ViewModel.Item).Address = txtAddress.Text;
+        ((ContactDTO) ViewModel.Item).Email = txtEmail.Text;
 
         editBottomSheet.State = BottomSheetState.Hidden;
 
