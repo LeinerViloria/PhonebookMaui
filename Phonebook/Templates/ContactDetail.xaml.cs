@@ -58,7 +58,7 @@ public partial class ContactDetail : ContentPage
 
     private void UpdateContactPhoto()
     {
-        App.Contacts.First(x => x.Id == Contact.Id).Image = ((ContactDTO) ViewModel.Item).Image;
+        App.Contacts.First(x => x.Id == Contact.Id).ImageSource = ((ContactDTO) ViewModel.Item).Image;
     }
 
     public void TakePicture(object sender, EventArgs e)
@@ -77,7 +77,7 @@ public partial class ContactDetail : ContentPage
 
         var Image = ImageSource.FromStream(() => memoriaStream);
         profilePhoto.Source = Image;
-        //((ContactDTO) ViewModel.Item).Image = Image;
+        ((ContactDTO) ViewModel.Item).ImageSource = Image;
 
         UpdateContactPhoto();
 
@@ -100,7 +100,7 @@ public partial class ContactDetail : ContentPage
 
         var Image = ImageSource.FromStream(() => memoriaStream);
         profilePhoto.Source = Image;
-        //((ContactDTO) ViewModel.Item).Image = Image;
+        ((ContactDTO) ViewModel.Item).ImageSource = Image;
 
         UpdateContactPhoto();
 
