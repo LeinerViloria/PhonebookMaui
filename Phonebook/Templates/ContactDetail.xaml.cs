@@ -96,7 +96,7 @@ public partial class ContactDetail : ContentPage
         if(photo is null)
             return;
 
-        var memoriaStream = await foto.OpenReadAsync();
+        var memoriaStream = await photo.OpenReadAsync();
 
         var Image = ImageSource.FromStream(() => memoriaStream);
         profilePhoto.Source = Image;

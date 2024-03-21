@@ -22,7 +22,7 @@ namespace Phonebook.Utils
 
         public static async Task SendMessage(params string[] Recipients)
         {
-            var message = new SmsMessage("", recipients);
+            var message = new SmsMessage("", Recipients);
 
             await Sms.Default.ComposeAsync(message);
         }
