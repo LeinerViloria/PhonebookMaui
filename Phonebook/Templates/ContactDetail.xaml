@@ -52,14 +52,14 @@
                 <dx:DXButton Margin="10" BackgroundColor= "#EEF2F3">
                     <StackLayout Orientation="Horizontal">
                         <Image Source="telephone.png" HeightRequest="24" WidthRequest="24" Margin="5,0,300,0"/>
-                        <Label Text="{Binding Item.PhoneNumber}" />
+                        <Label Text="{Binding Item.PhoneNumber}" TextColor="Black"/>
                     </StackLayout>
                 </dx:DXButton>
 
                 <dx:DXButton Margin="10" BackgroundColor= "#EEF2F3">
                     <StackLayout Orientation="Horizontal">
                         <Image Source="direccion.png" HeightRequest="24" WidthRequest="24" Margin="5,0,300,0"/>
-                        <Label Text="{Binding Item.Address}" />
+                        <Label Text="{Binding Item.Address}"  TextColor="Black" />
                     </StackLayout>
                 </dx:DXButton>
 
@@ -75,7 +75,7 @@
                         </Grid.ColumnDefinitions>
 
                         <Image Grid.Row="0" Grid.Column="0" Source="email.png" HeightRequest="24" WidthRequest="24" Margin="5,0,300,0"/>
-                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding Item.Email}" />
+                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding Item.Email}"  TextColor="Black" />
                     </Grid>
                 </dx:DXButton>
 
