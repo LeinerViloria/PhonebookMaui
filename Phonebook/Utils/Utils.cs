@@ -13,5 +13,18 @@ namespace Phonebook.Utils
 
             await toast.Show(cancellationTokenSource.Token);
         }
+
+        public static void Call(string Phonenumber)
+        {
+            if (PhoneDialer.Default.IsSupported)
+                PhoneDialer.Default.Open(Phonenumber);
+        }
+
+        public static async Task SendMessage(params string[] Recipients)
+        {
+            var message = new SmsMessage("", recipients);
+
+            await Sms.Default.ComposeAsync(message);
+        }
     }
 }
