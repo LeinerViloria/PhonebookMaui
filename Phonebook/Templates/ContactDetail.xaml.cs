@@ -54,6 +54,49 @@ public partial class ContactDetail : ContentPage
 
         _ = Navigation.PopAsync();
     }
+
+    private void ValidateRequired(TextEdit textEdit)
+    {
+        textEdit.HasError = false;
+
+        if (!string.IsNullOrWhiteSpace(textEdit.Text))
+            return;
+
+        textEdit.ErrorText = $"{textEdit.LabelText} es requerido";
+        textEdit.HasError = true;
+    }
+
+    private bool ValidateRequired(params TextEdit[] values)
+    {
+        for (int i = 0; i < values.Length; i++)
+            ValidateRequired(values[i]);
+
+        return values.ToList().TrueForAll(x => !x.HasError);
+    }
+
+    public void OnEdit()
+    {
+        var Continue = ValidateRequired(txtName, txtOccupation, txtPhone, txtAddress, txtEmail);
+
+        if (!Continue)
+                return;
+
+        ViewModel.Item.Name = txtName.Text;
+        ViewModel.Item.Occupation = txtOccupation.Text;
+        ViewModel.Item.PhoneNumber = txtPhone.Text;
+        ViewModel.Item.Address = txtAddress.Text;
+        ViewModel.Item.Email = txtEmail.Text;
+
+        editBottomSheet.State = BottomSheetState.Hidden;
+
+        txtName.Text = string.Empty;
+        txtAddress.Text = string.Empty;
+        txtEmail.Text = string.Empty;
+        txtOccupation.Text = string.Empty;
+        txtPhone.Text = string.Empty;
+
+        _ = Phonebook.Utils.Utils.ShowToast("Contacto actualizado");
+    }
     
 
 }
