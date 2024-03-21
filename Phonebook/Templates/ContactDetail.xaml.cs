@@ -55,6 +55,41 @@ public partial class ContactDetail : ContentPage
         _ = Navigation.PopAsync();
     }
 
+    private void UpdateContactPhoto()
+    {
+        App.Contacts.First(x => x.Id == Contact.Id).Image = ViewModel.Item.Image;
+    }
+
+    public void TakePicture(object sender, EventArgs e)
+    {
+        var photo = await MediaPicker.CapturePhotoAsync();
+
+        if(photo is null)
+            return;
+        
+        var memoriaStream = await photo.OpenReadAsync();
+        ViewModel.Item.Image = ImageSource.FromStream(() => memoriaStream);
+
+        UpdateContactPhoto();
+
+        bottomSheet.State = BottomSheetState.Hidden;
+    }
+
+    public void UploadPhoto(object sender, EventArgs e)
+    {
+        var photo = await MediaPicker.PickPhotoAsync();
+
+        if(photo is null)
+            return;
+
+        var memoriaStream = await foto.OpenReadAsync();
+        ViewModel.Item.Image = ImageSource.FromStream(() => memoriaStream);
+
+        UpdateContactPhoto();
+
+        bottomSheet.State = BottomSheetState.Hidden;
+    }
+
     private void ValidateRequired(TextEdit textEdit)
     {
         textEdit.HasError = false;
