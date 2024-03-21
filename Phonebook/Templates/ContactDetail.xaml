@@ -105,8 +105,8 @@
                             <ColumnDefinitions />
                         </Grid.ColumnsDefinitions>
 
-                        <Button Grid.Row="0" Background="transparent" Grid.Column="0" />
-                        <Button Grid.Row="0" Background="transparent" Grid.Column="1" />
+                        <Button Grid.Row="0" Background="transparent" Text="Cancelar" Grid.Column="0" />
+                        <Button Grid.Row="0" Background="transparent" Text="Actualizar" Grid.Column="1" />
                     </Grid>
                 </VerticalStackLayout>
             </dxc:BottomSheet>
