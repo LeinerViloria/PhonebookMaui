@@ -13,7 +13,7 @@ namespace Phonebook.Models
         public string PhoneNumber { get; set; } = null!;
 
         private string DefaultImage => "contact_default.png";
-        public StreamImageSource? ImageSource {get; set;}
+        public ImageSource? ImageSource {get; set;}
         
     }
 
