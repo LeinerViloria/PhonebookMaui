@@ -8,8 +8,8 @@
              x:Class="Phonebook.Templates.ContactDetail">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Editar" Order="Secondary" />
-        <ToolbarItem Text="Eliminar" Order="Secondary" />
+        <ToolbarItem Text="Editar" Order="Secondary" Clicked="Edit" />
+        <ToolbarItem Text="Eliminar" Order="Secondary" Clicked="Delete" />
     </ContentPage.ToolbarItems>
 
     <ScrollView>
@@ -80,10 +80,18 @@
                 <VerticalStackLayout>
                     <Button Text="Tomar foto" Margin="10" />
                     <Button Text="Subir foto" Margin="10" />
+                </VerticalStackLayout>
+            </dxc:BottomSheet>
 
-               
-            </VerticalStackLayout>
-        </dxc:BottomSheet>
+            <dxc:BottomSheet x:Name="editBottomSheet" 
+                 Grid.Row="1" 
+                 BackgroundColor="White"
+                 HalfExpandedRatio="0.2"
+                 CornerRadius="30">
+                <VerticalStackLayout>
+                    <Label Text="Edicion" />
+                </VerticalStackLayout>
+            </dxc:BottomSheet>
             
         </VerticalStackLayout>
     </ScrollView>
